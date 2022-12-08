@@ -1,0 +1,13 @@
+image: python:3.10
+
+stages:
+  - lint
+
+before_script:
+  - pip install poetry==1.2.2
+  - poetry install
+
+lint:
+  stages: lint
+  script:
+    - black . --check --diff
