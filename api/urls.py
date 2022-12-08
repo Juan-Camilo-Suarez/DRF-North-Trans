@@ -19,6 +19,5 @@ from django.urls import path
 from api.views import main_api
 
 urlpatterns = [
-    path('', main_api, name='example'),
-
+    path("", main_api, name="example"),
 ]
