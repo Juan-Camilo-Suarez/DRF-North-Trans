@@ -9,6 +9,6 @@ before_script:
   - poetry install
 
 lint:
-  stages: lint
+  stage: lint
   script:
     - black . --check --diff
