@@ -9,4 +9,3 @@ def main_api(request):
         'status': 'ok'
     })
 
-#comment
