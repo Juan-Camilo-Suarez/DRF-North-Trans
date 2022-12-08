@@ -4,7 +4,7 @@ stages:
   - lint
 
 before_script:
-  - pip install poetry==1.2.2
+  - pip install poetry==1.1.8
   - poetry install
 
 
