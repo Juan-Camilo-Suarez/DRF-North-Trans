@@ -11,11 +11,11 @@ tests = ["pytest", "pytest-asyncio", "mypy (>=0.800)"]
 
 [[package]]
 name = "black"
-version = "22.10.0"
+version = "22.8.0"
 description = "The uncompromising code formatter."
 category = "dev"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.6.2"
 
 [package.dependencies]
 click = ">=8.0.0"
@@ -160,7 +160,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "e72dbc61f70b3db1b03d588735747a92b47a170b059d85b164cde0acf457193d"
+content-hash = "6555f1fa4081f1513a50dc0a2d69982983f231f838d7893670b26547e9b20aca"
 
 [metadata.files]
 asgiref = []
