@@ -5,6 +5,7 @@ stages:
 
 before_script:
   - pip install poetry==1.1.8
+  - poetry config virtualenvs.create false
   - poetry install
 
 
