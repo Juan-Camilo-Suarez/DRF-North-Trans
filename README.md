@@ -11,8 +11,8 @@
    ``` poetry shell  ```
 5. Install dependencies:\
    ``` poetry install  ```
-6. Установка pre-commit хуков для запуска линтеров перед коммитом:\
-```pre-commit install**************```
+6. Installing pre-commit hooks to run linters before commit:\
+```pre-commit install```
 7. Install PostgreSQL from Docker:\
    ```docker-compose up -d```
 8. Apply migrations to database:\
