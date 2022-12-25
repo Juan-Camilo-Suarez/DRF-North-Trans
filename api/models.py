@@ -3,6 +3,8 @@ from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import UserManager as DjangoUserManager
 from django.db import models
 
+from api.enums import ROLES
+
 
 # Create your models here.
 
@@ -40,6 +42,9 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True, verbose_name="Email")
     password = models.CharField(max_length=200, verbose_name="password")
     # regula quien puede ir al admin
+    role = models.CharField(
+        max_length=20, choices=ROLES, verbose_name="role", null=True
+    )
     is_staff = models.BooleanField(default=False, verbose_name="is worker")
 
     class Meta:

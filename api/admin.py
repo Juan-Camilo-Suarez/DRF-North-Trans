@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext, gettext_lazy as _
+
 from api.models import ApplicationRegister, User
 
 # Register your models here.
@@ -21,6 +22,7 @@ class UserModelAdmin(UserAdmin):
             _("Permissions"),
             {
                 "fields": (
+                    "role",
                     "is_staff",
                     "is_superuser",
                     "groups",
@@ -34,7 +36,7 @@ class UserModelAdmin(UserAdmin):
             None,
             {
                 "classes": ("wide",),
-                "fields": ("email", "password1", "password2"),
+                "fields": ("role", "email", "password1", "password2"),
             },
         ),
     )
