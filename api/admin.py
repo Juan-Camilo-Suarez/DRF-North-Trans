@@ -2,10 +2,13 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext, gettext_lazy as _
 
-from api.models import ApplicationRegister, User
+from api.models import ApplicationRegister, User, ClientProfile, Car, DriverProfile
 
 # Register your models here.
 admin.site.register(ApplicationRegister)
+admin.site.register(ClientProfile)
+admin.site.register(Car)
+admin.site.register(DriverProfile)
 
 
 class UserModelAdmin(UserAdmin):

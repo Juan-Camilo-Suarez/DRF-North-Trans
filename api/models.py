@@ -40,6 +40,7 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     # de esta manera se puede decir que atributo va hacer de username
     USERNAME_FIELD = "email"
     email = models.EmailField(unique=True, verbose_name="Email")
+    name = models.CharField(max_length=255, verbose_name="Name", null=True)
     password = models.CharField(max_length=200, verbose_name="password")
     # regula quien puede ir al admin
     role = models.CharField(
@@ -47,9 +48,33 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     )
     is_staff = models.BooleanField(default=False, verbose_name="is worker")
 
+    def __str__(self):
+        return self.name + " / " + self.role
+
     class Meta:
         verbose_name = "user"
         verbose_name_plural = "users"
+
+
+class ClientProfile(models.Model):
+    city = models.CharField(max_length=120, blank=False, verbose_name="City")
+    phone = models.CharField(max_length=120, blank=False, verbose_name="Phone")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    avatar = models.ImageField(upload_to="users_avatar/", null=True, blank=True)
+
+
+class Car(models.Model):
+    number = models.CharField(max_length=120, blank=False, verbose_name="number|")
+    model = models.CharField(max_length=120, blank=False, verbose_name="model")
+    capacity = models.IntegerField()
+    photo = models.ImageField(upload_to="cars/", null=True, blank=True)
+
+
+class DriverProfile(models.Model):
+    city = models.CharField(max_length=120, blank=False, verbose_name="City")
+    phone = models.CharField(max_length=120, blank=False, verbose_name="Phone")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    Car = models.ForeignKey(Car, on_delete=models.CASCADE)
 
 
 class ApplicationRegister(models.Model):
