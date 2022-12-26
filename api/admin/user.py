@@ -2,14 +2,6 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext, gettext_lazy as _
 
-from api.models import ApplicationRegister, User, ClientProfile, Car, DriverProfile
-
-# Register your models here.
-admin.site.register(ApplicationRegister)
-admin.site.register(ClientProfile)
-admin.site.register(Car)
-admin.site.register(DriverProfile)
-
 
 class UserModelAdmin(UserAdmin):
     ordering = ("-create_at",)
@@ -45,4 +37,22 @@ class UserModelAdmin(UserAdmin):
     )
 
 
-admin.site.register(User, UserModelAdmin)
+class DriverProfileAdmin(admin.ModelAdmin):
+    list_display = ("city", "phone", "user", "Car")
+    list_filter = ("city",)
+    # asi se hace para los foreing keys
+    search_fields = ("user__name", "Car__number")
+
+
+class ClientProfileAdmin(admin.ModelAdmin):
+    list_display = (
+        "city",
+        "phone",
+        "user",
+    )
+    list_filter = ("city",)
+    # asi se hace para los foreing keys
+    search_fields = (
+        "user__name",
+        "Car__number",
+    )

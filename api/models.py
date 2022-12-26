@@ -2,8 +2,7 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import UserManager as DjangoUserManager
 from django.db import models
-
-from api.enums import ROLES
+from api.enums import ROLES, STATUS
 
 
 # Create your models here.
@@ -62,19 +61,67 @@ class ClientProfile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to="users_avatar/", null=True, blank=True)
 
+    def __str__(self):
+        return self.user.name + " / " + self.user.role
+
+    class Meta:
+        verbose_name = "Client"
+        verbose_name_plural = "Clients"
+
 
 class Car(models.Model):
-    number = models.CharField(max_length=120, blank=False, verbose_name="number|")
+    number = models.CharField(max_length=120, blank=False, verbose_name="number")
     model = models.CharField(max_length=120, blank=False, verbose_name="model")
-    capacity = models.IntegerField()
+    capacity = models.IntegerField(verbose_name="capacity on kg")
     photo = models.ImageField(upload_to="cars/", null=True, blank=True)
+
+    def __str__(self):
+        return self.number + " -" + self.model
+
+    class Meta:
+        verbose_name = "Car"
+        verbose_name_plural = "Cars"
 
 
 class DriverProfile(models.Model):
     city = models.CharField(max_length=120, blank=False, verbose_name="City")
     phone = models.CharField(max_length=120, blank=False, verbose_name="Phone")
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    Car = models.ForeignKey(Car, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="User")
+    Car = models.ForeignKey(Car, on_delete=models.CASCADE, verbose_name="Car")
+
+    def __str__(self):
+        return self.user.name + " / " + self.user.role
+
+    class Meta:
+        verbose_name = "Driver"
+        verbose_name_plural = "Drivers"
+
+
+class ApplicationsTransport(models.Model):
+    client_profile = models.ForeignKey(
+        ClientProfile, on_delete=models.CASCADE, verbose_name="client"
+    )
+    driver_profile = models.ForeignKey(
+        DriverProfile, on_delete=models.CASCADE, verbose_name="driver"
+    )
+    status = models.CharField(
+        max_length=20, choices=STATUS, verbose_name="Status", null=True
+    )
+    create_at = models.DateTimeField(auto_now_add=True)
+    commentary = models.TextField(null=True)
+    photo = models.ImageField(upload_to="applications/", null=True, blank=True)
+
+    def __str__(self):
+        return (
+            "Client "
+            + self.client_profile.user.name
+            + " Driver: "
+            + self.driver_profile.user.name
+        )
+
+    class Meta:
+        verbose_name = "Application For Transport"
+        verbose_name_plural = "Applications For Transport"
 
 
 class ApplicationRegister(models.Model):
@@ -91,6 +138,9 @@ class ApplicationRegister(models.Model):
         choices=TypeUser.choices,
         verbose_name="Type User",
     )
+
+    def __str__(self):
+        return self.name + " / " + self.city
 
     class Meta:
         verbose_name = "Application Register"
