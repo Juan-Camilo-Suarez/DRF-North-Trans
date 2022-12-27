@@ -40,22 +40,24 @@ class DriverProfileSerializer(serializers.ModelSerializer):
 
 
 class ApplicationsTransportSerializer(serializers.ModelSerializer):
-    # client = ClientProfileSerializer()
-    # driver = DriverProfileSerializer()
+    # client_profile = ClientProfileSerializer()
+    # driver_profile = DriverProfileSerializer()
     status = serializers.CharField(read_only=True)
     create_at = serializers.DateTimeField(read_only=True)
-    client_profile = serializers.PrimaryKeyRelatedField(
+    client_profile_id = serializers.PrimaryKeyRelatedField(
         queryset=ClientProfile.objects.all()
     )
-    driver_profile = serializers.PrimaryKeyRelatedField(
+    driver_profile_id = serializers.PrimaryKeyRelatedField(
         queryset=DriverProfile.objects.all()
     )
 
     class Meta:
         model = ApplicationsTransport
         fields = (
-            "client_profile",
-            "driver_profile",
+            # "client_profile",
+            "client_profile_id",
+            # "driver_profile",
+            "driver_profile_id",
             "status",
             "create_at",
             "commentary",
