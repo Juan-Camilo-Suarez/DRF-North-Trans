@@ -105,7 +105,11 @@ class ApplicationsTransport(models.Model):
         DriverProfile, on_delete=models.CASCADE, verbose_name="driver"
     )
     status = models.CharField(
-        max_length=20, choices=STATUS, verbose_name="Status", null=True
+        max_length=20,
+        choices=STATUS,
+        verbose_name="Status",
+        null=True,
+        default="processing",
     )
     create_at = models.DateTimeField(auto_now_add=True, verbose_name="date created")
     commentary = models.TextField(null=True)
