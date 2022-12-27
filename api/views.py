@@ -24,3 +24,10 @@ def application_register_list(request):
     applications_register = ApplicationRegister.objects.all()
     serializer = ApplicationsRegisterSerializer(applications_register, many=True)
     return Response(serializer.data)
+
+
+@api_view()
+def application_transport_list(request):
+    applications_transport = ApplicationsTransport.objects.all()
+    serializer = ApplicationsTransportSerializer(applications_transport, many=True)
+    return Response(serializer.data)
