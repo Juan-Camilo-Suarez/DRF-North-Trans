@@ -5,10 +5,33 @@ from api.models import (
     ApplicationsTransport,
     DriverProfile,
     ClientProfile,
+    User,
 )
 
 
+# class ClientProfileSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = ClientProfile
+#         fields = ("city", "phone", "user")
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("id", "name", "email", "role")
+
+
+class DriverProfileSerializer(serializers.ModelSerializer):
+    user = UserSerializer()
+
+    class Meta:
+        model = DriverProfile
+        fields = ("city", "phone", "user", "user_id", "Car")
+
+
 class ApplicationsTransportSerializer(serializers.ModelSerializer):
+    # client = ClientProfileSerializer()
+    # driver = DriverProfileSerializer()
     status = serializers.CharField(read_only=True)
     create_at = serializers.DateTimeField(read_only=True)
     client_profile = serializers.PrimaryKeyRelatedField(
