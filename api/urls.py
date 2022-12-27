@@ -16,7 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from api.views import main_api, application_register_list, application_transport_list
+from api.views import (
+    main_api,
+    application_register_list,
+    application_transport_list,
+    application_transport,
+)
 
 urlpatterns = [
     path("", main_api, name="example"),
@@ -28,6 +33,11 @@ urlpatterns = [
     path(
         "applications_transport/",
         application_transport_list,
+        name="applications for transport lis",
+    ),
+    path(
+        "application_transport/<int:id>/",
+        application_transport,
         name="applications for transport lis",
     ),
 ]

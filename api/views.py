@@ -2,6 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
+from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
 from api.models import ApplicationsTransport, ApplicationRegister
@@ -30,4 +31,13 @@ def application_register_list(request):
 def application_transport_list(request):
     applications_transport = ApplicationsTransport.objects.all()
     serializer = ApplicationsTransportSerializer(applications_transport, many=True)
+    return Response(serializer.data)
+
+
+@api_view()
+def application_transport(request, id):
+    applications_transport = get_object_or_404(
+        ApplicationsTransport.objects.all(), id=id
+    )
+    serializer = ApplicationsTransportSerializer(applications_transport)
     return Response(serializer.data)
