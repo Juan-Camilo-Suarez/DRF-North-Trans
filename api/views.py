@@ -34,11 +34,17 @@ def application_register_list(request):
         return Response(serializer.data)
 
 
-@api_view()
+@api_view(["GET", "POST"])
 def application_transport_list(request):
-    applications_transport = ApplicationsTransport.objects.all()
-    serializer = ApplicationsTransportSerializer(applications_transport, many=True)
-    return Response(serializer.data)
+    if request.method == "POST":
+        serializer = ApplicationsTransportSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+    else:
+        applications_transport = ApplicationsTransport.objects.all()
+        serializer = ApplicationsTransportSerializer(applications_transport, many=True)
+        return Response(serializer.data)
 
 
 @api_view()
