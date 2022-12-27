@@ -20,11 +20,18 @@ def main_api(request):
     return JsonResponse({"status": "ok"})
 
 
-@api_view()
+@api_view(["GET", "POST"])
 def application_register_list(request):
-    applications_register = ApplicationRegister.objects.all()
-    serializer = ApplicationsRegisterSerializer(applications_register, many=True)
-    return Response(serializer.data)
+    # add application register
+    if request.method == "POST":
+        serializer = ApplicationsRegisterSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+    else:
+        applications_register = ApplicationRegister.objects.all()
+        serializer = ApplicationsRegisterSerializer(applications_register, many=True)
+        return Response(serializer.data)
 
 
 @api_view()
