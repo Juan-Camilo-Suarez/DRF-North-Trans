@@ -10,12 +10,14 @@ from api.models import (
     ApplicationRegister,
     DriverProfile,
     ClientProfile,
+    Car,
 )
 from api.serializers import (
     ApplicationsTransportSerializer,
     ApplicationsRegisterSerializer,
     DriverProfileSerializer,
     ClientProfileSerializer,
+    CarSerializer,
 )
 
 
@@ -74,4 +76,11 @@ def driver_list(request):
 def client_list(request):
     client_profile = ClientProfile.objects.all()
     serializer = ClientProfileSerializer(client_profile, many=True)
+    return Response(serializer.data)
+
+
+@api_view()
+def car_list(request):
+    car = Car.objects.all()
+    serializer = CarSerializer(car, many=True)
     return Response(serializer.data)

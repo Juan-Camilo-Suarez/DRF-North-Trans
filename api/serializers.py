@@ -6,6 +6,7 @@ from api.models import (
     DriverProfile,
     ClientProfile,
     User,
+    Car,
 )
 
 
@@ -23,12 +24,19 @@ class ClientProfileSerializer(serializers.ModelSerializer):
         fields = ("city", "phone", "user", "user_id")
 
 
+class CarSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Car
+        fields = ("number", "model", "capacity", "photo")
+
+
 class DriverProfileSerializer(serializers.ModelSerializer):
     user = UserSerializer()
+    car = CarSerializer()
 
     class Meta:
         model = DriverProfile
-        fields = ("city", "phone", "user", "user_id", "Car")
+        fields = ("city", "phone", "user", "user_id", "car", "Car_id")
 
 
 class ApplicationsTransportSerializer(serializers.ModelSerializer):
