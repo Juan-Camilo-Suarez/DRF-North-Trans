@@ -24,6 +24,7 @@ from api.views import (
     driver_list,
     client_list,
     car_list,
+    profile_client,
 )
 
 urlpatterns = [
@@ -57,5 +58,10 @@ urlpatterns = [
         "car_list/",
         car_list,
         name="car list",
+    ),
+    path(
+        "profile_client/<int:id>/",
+        profile_client,
+        name="profile client",
     ),
 ]

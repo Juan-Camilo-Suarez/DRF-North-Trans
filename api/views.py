@@ -80,6 +80,13 @@ def client_list(request):
 
 
 @api_view()
+def profile_client(request, id):
+    client = get_object_or_404(ClientProfile.objects.all(), id=id)
+    serializer = ClientProfileSerializer(client)
+    return Response(serializer.data)
+
+
+@api_view()
 def car_list(request):
     car = Car.objects.all()
     serializer = CarSerializer(car, many=True)
