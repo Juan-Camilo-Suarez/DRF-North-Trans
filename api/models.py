@@ -107,9 +107,10 @@ class ApplicationsTransport(models.Model):
     status = models.CharField(
         max_length=20, choices=STATUS, verbose_name="Status", null=True
     )
-    create_at = models.DateTimeField(auto_now_add=True)
+    create_at = models.DateTimeField(auto_now_add=True, verbose_name="date created")
     commentary = models.TextField(null=True)
     photo = models.ImageField(upload_to="applications/", null=True, blank=True)
+    invoice = models.ImageField(upload_to="applications/invoice", null=True, blank=True)
 
     def __str__(self):
         return (
