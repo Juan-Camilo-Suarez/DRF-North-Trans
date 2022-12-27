@@ -22,6 +22,7 @@ from api.views import (
     application_transport_list,
     application_transport,
     driver_list,
+    client_list,
 )
 
 urlpatterns = [
@@ -44,6 +45,11 @@ urlpatterns = [
     path(
         "driver_list/",
         driver_list,
+        name="driver list",
+    ),
+    path(
+        "client_list/",
+        client_list,
         name="driver list",
     ),
 ]

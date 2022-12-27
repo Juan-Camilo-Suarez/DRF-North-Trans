@@ -5,11 +5,17 @@ from rest_framework.decorators import api_view
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
-from api.models import ApplicationsTransport, ApplicationRegister, DriverProfile
+from api.models import (
+    ApplicationsTransport,
+    ApplicationRegister,
+    DriverProfile,
+    ClientProfile,
+)
 from api.serializers import (
     ApplicationsTransportSerializer,
     ApplicationsRegisterSerializer,
     DriverProfileSerializer,
+    ClientProfileSerializer,
 )
 
 
@@ -61,4 +67,11 @@ def application_transport(request, id):
 def driver_list(request):
     driver_profile = DriverProfile.objects.all()
     serializer = DriverProfileSerializer(driver_profile, many=True)
+    return Response(serializer.data)
+
+
+@api_view()
+def client_list(request):
+    client_profile = ClientProfile.objects.all()
+    serializer = ClientProfileSerializer(client_profile, many=True)
     return Response(serializer.data)

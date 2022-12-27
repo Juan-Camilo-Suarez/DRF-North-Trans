@@ -9,16 +9,18 @@ from api.models import (
 )
 
 
-# class ClientProfileSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = ClientProfile
-#         fields = ("city", "phone", "user")
-
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ("id", "name", "email", "role")
+
+
+class ClientProfileSerializer(serializers.ModelSerializer):
+    user = UserSerializer()
+
+    class Meta:
+        model = ClientProfile
+        fields = ("city", "phone", "user", "user_id")
 
 
 class DriverProfileSerializer(serializers.ModelSerializer):
