@@ -29,6 +29,11 @@ def main_api(request):
     return JsonResponse({"status": "ok"})
 
 
+"""
+get list of applications register or send aplication register
+"""
+
+
 @api_view(["GET", "POST"])
 def application_register_list(request):
     # add application register
@@ -41,6 +46,11 @@ def application_register_list(request):
         applications_register = ApplicationRegister.objects.all()
         serializer = ApplicationsRegisterSerializer(applications_register, many=True)
         return Response(serializer.data)
+
+
+"""
+get list of applications transport or send aplication to transport
+"""
 
 
 @api_view(["GET", "POST"])
@@ -56,6 +66,11 @@ def application_transport_list(request):
         return Response(serializer.data)
 
 
+"""
+get applications transport  by id
+"""
+
+
 @api_view()
 def application_transport(request, id):
     applications_transport = get_object_or_404(
@@ -65,11 +80,21 @@ def application_transport(request, id):
     return Response(serializer.data)
 
 
+"""
+get list of driver profile
+"""
+
+
 @api_view()
 def driver_list(request):
     driver_profile = DriverProfile.objects.all()
     serializer = DriverProfileSerializer(driver_profile, many=True)
     return Response(serializer.data)
+
+
+"""
+get client list
+"""
 
 
 @api_view()
@@ -79,11 +104,21 @@ def client_list(request):
     return Response(serializer.data)
 
 
+"""
+get client by id
+"""
+
+
 @api_view()
 def profile_client(request, id):
     client = get_object_or_404(ClientProfile.objects.all(), id=id)
     serializer = ClientProfileSerializer(client)
     return Response(serializer.data)
+
+
+"""
+get car list
+"""
 
 
 @api_view()
