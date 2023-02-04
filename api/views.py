@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
+from rest_framework.viewsets import ViewSet
 
 from api.models import (
     ApplicationsTransport,
@@ -30,21 +31,21 @@ def main_api(request):
 
 
 """
+with class
 get list of applications register or send aplication register
 """
 
 
-@api_view(["GET", "POST"])
-def application_register_list(request):
-    # add application register
-    if request.method == "POST":
+class ApplicationListViewRegister(ViewSet):
+    def list(self, request):
+        applications_register = ApplicationRegister.objects.all()
+        serializer = ApplicationsRegisterSerializer(applications_register, many=True)
+        return Response(serializer.data)
+
+    def create(self, request):
         serializer = ApplicationsRegisterSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data)
-    else:
-        applications_register = ApplicationRegister.objects.all()
-        serializer = ApplicationsRegisterSerializer(applications_register, many=True)
         return Response(serializer.data)
 
 

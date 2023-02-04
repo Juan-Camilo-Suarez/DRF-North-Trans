@@ -18,20 +18,20 @@ from django.urls import path
 
 from api.views import (
     main_api,
-    application_register_list,
     application_transport_list,
     application_transport,
     driver_list,
     client_list,
     car_list,
     profile_client,
+    ApplicationListViewRegister,
 )
 
 urlpatterns = [
     path("", main_api, name="example"),
     path(
         "applications_register/",
-        application_register_list,
+        ApplicationListViewRegister.as_view({"get": "list", "post": "create"}),
         name="applications register list",
     ),
     path(
