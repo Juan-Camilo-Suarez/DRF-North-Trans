@@ -27,16 +27,16 @@ class ClientProfileSerializer(serializers.ModelSerializer):
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
-        fields = ("number", "model", "capacity", "photo")
+        fields = ("id", "number", "model", "capacity", "photo")
 
 
 class DriverProfileSerializer(serializers.ModelSerializer):
     user = UserSerializer()
-    car = CarSerializer()
+    Car = CarSerializer()
 
     class Meta:
         model = DriverProfile
-        fields = ("city", "phone", "user", "user_id", "car", "Car_id")
+        fields = ("city", "phone", "Car", "user")
 
 
 class ApplicationsTransportSerializer(serializers.ModelSerializer):
@@ -50,6 +50,14 @@ class ApplicationsTransportSerializer(serializers.ModelSerializer):
     driver_profile_id = serializers.PrimaryKeyRelatedField(
         queryset=DriverProfile.objects.all()
     )
+
+    # def create_client(self, validated_data):
+    #     validated_data['client_profile_id'] = validated_data['client_profile__id']
+    #     return super(ClientProfileSerializer).create(validated_data)
+    #
+    # def create_driver(self, validated_data):
+    #     validated_data['driver_profile_id'] = validated_data['driver_profile_id'].id
+    #     return super(ClientProfileSerializer).create(validated_data)
 
     class Meta:
         model = ApplicationsTransport

@@ -15,53 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_framework.routers import SimpleRouter
 
 from api.views import (
     main_api,
-    application_transport_list,
-    application_transport,
-    driver_list,
-    client_list,
-    car_list,
-    profile_client,
-    ApplicationListViewRegister,
+    Register,
+    Trasnsport,
+    Clients,
+    Cars,
+    Drivers,
 )
 
+"""
+add simple router
+"""
+router = SimpleRouter()
+router.register("register", Register, "applications register list")
+router.register("transport", Trasnsport, "transport ")
+router.register("driver", Drivers, "driver")
+router.register("client", Clients, "client")
+router.register("car", Cars, "car")
 urlpatterns = [
     path("", main_api, name="example"),
-    path(
-        "applications_register/",
-        ApplicationListViewRegister.as_view({"get": "list", "post": "create"}),
-        name="applications register list",
-    ),
-    path(
-        "applications_transport/",
-        application_transport_list,
-        name="applications for transport list",
-    ),
-    path(
-        "application_transport/<int:id>/",
-        application_transport,
-        name="applications for transport list",
-    ),
-    path(
-        "driver_list/",
-        driver_list,
-        name="driver list",
-    ),
-    path(
-        "client_list/",
-        client_list,
-        name="client list",
-    ),
-    path(
-        "car_list/",
-        car_list,
-        name="car list",
-    ),
-    path(
-        "profile_client/<int:id>/",
-        profile_client,
-        name="profile client",
-    ),
+    *router.urls,
 ]

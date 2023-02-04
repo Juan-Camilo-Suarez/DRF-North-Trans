@@ -87,6 +87,7 @@ class DriverProfile(models.Model):
     city = models.CharField(max_length=120, blank=False, verbose_name="City")
     phone = models.CharField(max_length=120, blank=False, verbose_name="Phone")
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="User")
+    # --> error on sintasis Car correct will be car
     Car = models.ForeignKey(Car, on_delete=models.CASCADE, verbose_name="Car")
 
     def __str__(self):
@@ -111,22 +112,26 @@ class ApplicationsTransport(models.Model):
         null=True,
         default="processing",
     )
-    create_at = models.DateTimeField(auto_now_add=True, verbose_name="date created")
-    commentary = models.TextField(null=True)
-    photo = models.ImageField(upload_to="applications/", null=True, blank=True)
-    invoice = models.ImageField(upload_to="applications/invoice", null=True, blank=True)
 
-    def __str__(self):
-        return (
-            "Client "
-            + self.client_profile.user.name
-            + " Driver: "
-            + self.driver_profile.user.name
-        )
 
-    class Meta:
-        verbose_name = "Application For Transport"
-        verbose_name_plural = "Applications For Transport"
+create_at = models.DateTimeField(auto_now_add=True, verbose_name="date created")
+commentary = models.TextField(null=True)
+photo = models.ImageField(upload_to="applications/", null=True, blank=True)
+invoice = models.ImageField(upload_to="applications/invoice", null=True, blank=True)
+
+
+def __str__(self):
+    return (
+        "Client "
+        + self.client_profile.user.name
+        + " Driver: "
+        + self.driver_profile.user.name
+    )
+
+
+class Meta:
+    verbose_name = "Application For Transport"
+    verbose_name_plural = "Applications For Transport"
 
 
 class ApplicationRegister(models.Model):
