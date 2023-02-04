@@ -1,0 +1,895 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-02-04T10:38:39.770Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "1",
+      "object_repr": "anna / kazan",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-02-04T10:59:20.544Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "None / driver",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-02-04T11:23:48.372Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "None / worker",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Role\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-02-04T11:24:03.206Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "None / driver",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-02-04T11:25:15.531Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "fabian / driver",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-02-04T11:26:05.016Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "111111 -mazda",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2023-02-04T11:26:23.170Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "111111 -mazda",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Photo\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2023-02-04T11:26:25.388Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "fabian / driver",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2023-02-04T11:26:54.207Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "5",
+      "object_repr": "carlos / driver",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2023-02-04T11:27:42.163Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "222222 -bmw",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2023-02-04T11:27:43.559Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "carlos / driver",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2023-02-04T11:29:10.591Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "6",
+      "object_repr": "anna / client",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2023-02-04T11:30:00.042Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "7",
+      "object_repr": "natalia / client",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2023-02-04T11:30:28.525Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "natalia / client",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2023-02-04T11:30:44.959Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "anna / client",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2023-02-04T11:31:18.094Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "2",
+      "object_repr": "pepa / bogota",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2023-02-04T11:32:08.900Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Client natalia Driver: fabian",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add Application Register",
+      "content_type": 6,
+      "codename": "add_applicationregister"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change Application Register",
+      "content_type": 6,
+      "codename": "change_applicationregister"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete Application Register",
+      "content_type": 6,
+      "codename": "delete_applicationregister"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view Application Register",
+      "content_type": 6,
+      "codename": "view_applicationregister"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 7,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 7,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 7,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 7,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add Client",
+      "content_type": 8,
+      "codename": "add_clientprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change Client",
+      "content_type": 8,
+      "codename": "change_clientprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete Client",
+      "content_type": 8,
+      "codename": "delete_clientprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view Client",
+      "content_type": 8,
+      "codename": "view_clientprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add Car",
+      "content_type": 9,
+      "codename": "add_car"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change Car",
+      "content_type": 9,
+      "codename": "change_car"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete Car",
+      "content_type": 9,
+      "codename": "delete_car"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view Car",
+      "content_type": 9,
+      "codename": "view_car"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add Driver",
+      "content_type": 10,
+      "codename": "add_driverprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change Driver",
+      "content_type": 10,
+      "codename": "change_driverprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete Driver",
+      "content_type": 10,
+      "codename": "delete_driverprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view Driver",
+      "content_type": 10,
+      "codename": "view_driverprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add Application For Transport",
+      "content_type": 11,
+      "codename": "add_applicationstransport"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change Application For Transport",
+      "content_type": 11,
+      "codename": "change_applicationstransport"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete Application For Transport",
+      "content_type": 11,
+      "codename": "delete_applicationstransport"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view Application For Transport",
+      "content_type": 11,
+      "codename": "view_applicationstransport"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "api",
+      "model": "applicationregister"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "api",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "api",
+      "model": "clientprofile"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "api",
+      "model": "car"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "api",
+      "model": "driverprofile"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "api",
+      "model": "applicationstransport"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "yyykorol3mpqe382kc41q0p15io74b7e",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGlnZxL9Q0ucM1q69xgFkS3FSIe5OIqWA9s3MewuP25r91njxcxRXAeLyuxGGJ5cDxAeWe5WhlnWZSR6KPGmTU438up3u30HGlvc6KUPa4dCbhKgo0RDc2FmLoLTiMAaAaG3SEdiAGWznOIDFHvYGKSbx-QLriDgr:1pOF6r:aM-6pgTCM8W02iB1QZyXzUpoi_DmWLfKQhs5KYoN9vo",
+      "expire_date": "2023-02-18T09:45:25.931Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 1,
+    "fields": {
+      "last_login": "2023-02-04T09:45:25.927Z",
+      "is_superuser": true,
+      "create_at": "2023-02-04T09:43:18.725Z",
+      "update_at": "2023-02-04T11:23:48.368Z",
+      "email": "camilo@gmail.com",
+      "name": null,
+      "password": "pbkdf2_sha256$390000$D3CngJFMV3JFlfhhCMnroH$Z+Vff4cuTWxxBmQQynk1psLTKpJpx79TfGHOOCUohQM=",
+      "role": "worker",
+      "is_staff": true,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 4,
+    "fields": {
+      "last_login": null,
+      "is_superuser": false,
+      "create_at": "2023-02-04T11:25:15.530Z",
+      "update_at": "2023-02-04T11:25:15.530Z",
+      "email": "fabian@mail.com",
+      "name": "fabian",
+      "password": "pbkdf2_sha256$390000$6u2NWS1pCkSutboHpfNYLW$wwA/swOIZmovQafCC+s2xQn9XfPcugL6EOttdylZbyo=",
+      "role": "driver",
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 5,
+    "fields": {
+      "last_login": null,
+      "is_superuser": false,
+      "create_at": "2023-02-04T11:26:54.206Z",
+      "update_at": "2023-02-04T11:26:54.206Z",
+      "email": "carlos@mail.com",
+      "name": "carlos",
+      "password": "pbkdf2_sha256$390000$rhISj6AfAYO8z4fiuDeLRO$TfmMv+G9YvyUdMdjUIbU4GMWQ2Y0vs04Tb9qUp67xVk=",
+      "role": "driver",
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 6,
+    "fields": {
+      "last_login": null,
+      "is_superuser": false,
+      "create_at": "2023-02-04T11:29:10.589Z",
+      "update_at": "2023-02-04T11:29:10.589Z",
+      "email": "ana@gmail.com",
+      "name": "anna",
+      "password": "pbkdf2_sha256$390000$L40YEk1QXcxzq2bxopqjcT$yLdhoJ6SWAAMuBUM/dkjAKIWT2/fpEsVHeaDUjl9Eqw=",
+      "role": "client",
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 7,
+    "fields": {
+      "last_login": null,
+      "is_superuser": false,
+      "create_at": "2023-02-04T11:30:00.041Z",
+      "update_at": "2023-02-04T11:30:00.041Z",
+      "email": "nata@gmail.com",
+      "name": "natalia",
+      "password": "pbkdf2_sha256$390000$gZtb20SGaWnceZRiv1vDoY$yZYzLnG4TSazaG4b4IDGXL8CA+fYcFMq158gQzHZyDs=",
+      "role": "client",
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "api.clientprofile",
+    "pk": 1,
+    "fields": {
+      "city": "kirov",
+      "phone": "+54566546",
+      "user": 7,
+      "avatar": ""
+    }
+  },
+  {
+    "model": "api.clientprofile",
+    "pk": 2,
+    "fields": {
+      "city": "kazan",
+      "phone": "+45454454254",
+      "user": 6,
+      "avatar": ""
+    }
+  },
+  {
+    "model": "api.car",
+    "pk": 1,
+    "fields": {
+      "number": "111111",
+      "model": "mazda",
+      "capacity": 6,
+      "photo": "cars/daniel-leone-v7daTKlZzaw-unsplash.jpg"
+    }
+  },
+  {
+    "model": "api.car",
+    "pk": 2,
+    "fields": {
+      "number": "222222",
+      "model": "bmw",
+      "capacity": 5,
+      "photo": "cars/john-towner-JgOeRuGD_Y4-unsplash.jpg"
+    }
+  },
+  {
+    "model": "api.driverprofile",
+    "pk": 1,
+    "fields": {
+      "city": "kazan",
+      "phone": "+464644464344",
+      "user": 4,
+      "Car": 1
+    }
+  },
+  {
+    "model": "api.driverprofile",
+    "pk": 2,
+    "fields": {
+      "city": "pensa",
+      "phone": "+4464645645644",
+      "user": 5,
+      "Car": 2
+    }
+  },
+  {
+    "model": "api.applicationstransport",
+    "pk": 1,
+    "fields": {
+      "client_profile": 1,
+      "driver_profile": 1,
+      "status": "processing",
+      "create_at": "2023-02-04T11:32:08.889Z",
+      "commentary": "jhv  gdhhfkj nlkmfñtgñkvlñfdgjñsjfdhljfgñsjh{blkyjabljhajñyl",
+      "photo": "applications/daniel-leone-v7daTKlZzaw-unsplash.jpg",
+      "invoice": "applications/invoice/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg"
+    }
+  },
+  {
+    "model": "api.applicationregister",
+    "pk": 1,
+    "fields": {
+      "name": "anna",
+      "city": "kazan",
+      "email": "ana@gmail.com",
+      "phone": "+795951366431",
+      "user_position": "client"
+    }
+  },
+  {
+    "model": "api.applicationregister",
+    "pk": 2,
+    "fields": {
+      "name": "pepa",
+      "city": "bogota",
+      "email": "pepa@gmail.com",
+      "phone": "+6787987311",
+      "user_position": "client"
+    }
+  }
+]
