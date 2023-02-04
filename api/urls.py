@@ -52,7 +52,7 @@ urlpatterns = [
     path(
         "client_list/",
         client_list,
-        name="driver list",
+        name="client list",
     ),
     path(
         "car_list/",

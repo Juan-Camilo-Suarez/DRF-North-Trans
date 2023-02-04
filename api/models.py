@@ -48,7 +48,7 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False, verbose_name="is worker")
 
     def __str__(self):
-        return self.name + " / " + self.role
+        return str(self.name) + " / " + str(self.role)
 
     class Meta:
         verbose_name = "user"
