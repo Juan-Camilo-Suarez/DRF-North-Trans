@@ -17,7 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class ClientProfileSerializer(serializers.ModelSerializer):
-    # user = UserSerializer()
+    user = UserSerializer()
     user_id = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
 
     def create(self, validated_data):
@@ -26,7 +26,7 @@ class ClientProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ClientProfile
-        fields = ("city", "phone", "user_id")
+        fields = ("city", "phone", "user", "user_id")
 
 
 class CarSerializer(serializers.ModelSerializer):
@@ -45,8 +45,6 @@ class DriverProfileSerializer(serializers.ModelSerializer):
 
 
 class ApplicationsTransportSerializer(serializers.ModelSerializer):
-    # client_profile = ClientProfileSerializer()
-    # driver_profile = DriverProfileSerializer()
     status = serializers.CharField(read_only=True)
     create_at = serializers.DateTimeField(read_only=True)
     client_profile_id = serializers.PrimaryKeyRelatedField(
@@ -56,13 +54,10 @@ class ApplicationsTransportSerializer(serializers.ModelSerializer):
         queryset=DriverProfile.objects.all()
     )
 
-    # def create_client(self, validated_data):
-    #     validated_data['client_profile_id'] = validated_data['client_profile__id']
-    #     return super(ClientProfileSerializer).create(validated_data)
-    #
-    # def create_driver(self, validated_data):
-    #     validated_data['driver_profile_id'] = validated_data['driver_profile_id'].id
-    #     return super(ClientProfileSerializer).create(validated_data)
+    def create(self, validated_data):
+        validated_data["client_profile_id"] = validated_data["client_profile_id"].id
+        validated_data["driver_profile_id"] = validated_data["driver_profile_id"].id
+        return super(ApplicationsTransportSerializer, self).create(validated_data)
 
     class Meta:
         model = ApplicationsTransport
