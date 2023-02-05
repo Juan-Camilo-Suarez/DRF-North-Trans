@@ -1,10 +1,11 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework import mixins
 from rest_framework.decorators import api_view
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
-from rest_framework.viewsets import ViewSet, ModelViewSet
+from rest_framework.viewsets import ViewSet, ModelViewSet, GenericViewSet
 
 from api.models import (
     ApplicationsTransport,
@@ -73,6 +74,16 @@ class Clients(ModelViewSet):
     serializer_class = ClientProfileSerializer
 
 
-class Cars(ModelViewSet):
+"""
+like this form we can change permissions for methods 
+"""
+
+
+class Cars(
+    mixins.CreateModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.ListModelMixin,
+    GenericViewSet,
+):
     queryset = Car.objects.all()
     serializer_class = CarSerializer
