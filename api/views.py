@@ -13,6 +13,7 @@ from api.models import (
     DriverProfile,
     ClientProfile,
     Car,
+    User,
 )
 from api.serializers import (
     ApplicationsTransportSerializer,
@@ -49,7 +50,20 @@ get list of applications transport or send aplication to transport
 
 
 class Trasnsport(ModelViewSet):
-    queryset = ApplicationsTransport.objects.all()
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.role == "client":
+            client = ClientProfile.objects.all().get(user=user)
+            return ApplicationsTransport.objects.all().filter(
+                client_profile_id=client.id
+            )
+        else:
+            driver = DriverProfile.objects.all().get(user=user)
+            return ApplicationsTransport.objects.all().filter(
+                driver_profile_id=driver.id
+            )
+
     serializer_class = ApplicationsTransportSerializer
 
 
@@ -70,7 +84,10 @@ get client list
 
 
 class Clients(ModelViewSet):
-    queryset = ClientProfile.objects.all()
+    def get_queryset(self):
+        user = self.request.user
+        return ClientProfile.objects.all().filter(user=user)
+
     serializer_class = ClientProfileSerializer
 
 
@@ -85,5 +102,10 @@ class Cars(
     mixins.ListModelMixin,
     GenericViewSet,
 ):
-    queryset = Car.objects.all()
+    def get_queryset(self):
+        user = self.request.user
+
+        driver = DriverProfile.objects.all().get(user=user)
+        return Car.objects.all().filter(id=driver.Car_id)
+
     serializer_class = CarSerializer

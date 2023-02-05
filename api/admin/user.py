@@ -46,6 +46,7 @@ class DriverProfileAdmin(admin.ModelAdmin):
 
 class ClientProfileAdmin(admin.ModelAdmin):
     list_display = (
+        "id",
         "city",
         "phone",
         "user",
