@@ -99,6 +99,12 @@ class Clients(ViewSet):
         serializer = ClientProfileSerializer(client_profile, many=True)
         return Response(serializer.data)
 
+    def create(self, request):
+        serializer = ClientProfileSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
     def retrieve(self, request, pk):
         client = get_object_or_404(ClientProfile.objects.all(), id=pk)
         serializer = ClientProfileSerializer(client)

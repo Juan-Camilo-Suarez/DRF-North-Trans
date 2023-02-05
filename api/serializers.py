@@ -17,11 +17,16 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class ClientProfileSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
+    # user = UserSerializer()
+    user_id = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
+
+    def create(self, validated_data):
+        validated_data["user_id"] = validated_data["user_id"].id
+        return super(ClientProfileSerializer, self).create(validated_data)
 
     class Meta:
         model = ClientProfile
-        fields = ("city", "phone", "user", "user_id")
+        fields = ("city", "phone", "user_id")
 
 
 class CarSerializer(serializers.ModelSerializer):
