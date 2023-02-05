@@ -24,6 +24,7 @@ from api.views import (
     Clients,
     Cars,
     Drivers,
+    login_view,
 )
 
 """
@@ -37,5 +38,6 @@ router.register("client", Clients, "client")
 router.register("car", Cars, "car")
 urlpatterns = [
     path("", main_api, name="example"),
+    path("login/", login_view, name="login"),
     *router.urls,
 ]

@@ -1,8 +1,11 @@
+from django.contrib.auth import authenticate
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import mixins
-from rest_framework.decorators import api_view
+from rest_framework.authtoken.models import Token
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet, ModelViewSet, GenericViewSet
@@ -21,6 +24,8 @@ from api.serializers import (
     DriverProfileSerializer,
     ClientProfileSerializer,
     CarSerializer,
+    LoginSerializer,
+    LoginResponseSerializer,
 )
 
 
@@ -32,12 +37,32 @@ def main_api(request):
     return JsonResponse({"status": "ok"})
 
 
+@api_view(["POST"])
+@permission_classes([])
+def login_view(request):
+    serializer = LoginSerializer(data=request.data)
+    serializer.is_valid()
+
+    email = serializer.validated_data["email"]
+    password = serializer.validated_data["password"]
+    user = authenticate(request, email=email, password=password)
+    token_model, created = Token.objects.get_or_create(user=user)
+    if user is None:
+        raise AuthenticationFailed
+
+    response_serializer = LoginResponseSerializer(
+        {"token": token_model.key, "user": user}
+    )
+    return Response(response_serializer.data)
+
+
 """
 with class
 get list of applications register or send aplication register
 """
 
 
+@permission_classes([])
 class Register(ModelViewSet):
     queryset = ApplicationRegister.objects.all()
     serializer_class = ApplicationsRegisterSerializer
