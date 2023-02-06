@@ -12,6 +12,8 @@ RUN poetry install
 
 COPY . .
 
+RUN python src/manage.py collectstatic --no-input
+
 
 EXPOSE 8000
 
