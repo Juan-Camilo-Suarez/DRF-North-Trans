@@ -17,6 +17,7 @@ from dotenv import load_dotenv, find_dotenv
 
 import warnings
 
+PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 warnings.filterwarnings(action="ignore")
 load_dotenv(find_dotenv())  # loads the configs from .env
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,6 +35,7 @@ SECRET_KEY = os.environ.get(
 DEBUG = os.environ.get("DEBUG", "true").lower() == "true"
 
 ALLOWED_HOSTS = ["*"] if DEBUG else ["localhost", "app"]
+USE_X_FORWARDED_HOST = True
 
 # Application definition
 
@@ -58,6 +60,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "NortTrans.urls"
@@ -127,7 +130,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 STATIC_URL = "/static/"
 
 AUTH_USER_MODEL = "api.User"
