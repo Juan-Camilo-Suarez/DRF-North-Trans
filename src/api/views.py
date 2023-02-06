@@ -29,6 +29,7 @@ from api.serializers import (
 
 
 @api_view()
+@permission_classes([])
 def main_api(request):
     return JsonResponse({"status": "ok"})
 
