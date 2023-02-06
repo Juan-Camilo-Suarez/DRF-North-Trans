@@ -1,14 +1,11 @@
 from django.contrib.auth import authenticate
 from django.http import JsonResponse
-from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
 from rest_framework import mixins
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.exceptions import AuthenticationFailed
-from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
-from rest_framework.viewsets import ViewSet, ModelViewSet, GenericViewSet
+from rest_framework.viewsets import ModelViewSet, GenericViewSet
 
 from api.models import (
     ApplicationsTransport,
@@ -16,7 +13,6 @@ from api.models import (
     DriverProfile,
     ClientProfile,
     Car,
-    User,
 )
 from api.serializers import (
     ApplicationsTransportSerializer,
