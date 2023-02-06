@@ -12,6 +12,8 @@ python-dotenv = "0.21.0"
 psycopg2 = "2.9.5"
 pillow = "^9.3.0"
 factory-boy = "^3.2.1"
+pytest = "^7.2.1"
+pytest-django = "^4.5.2"
 
 [tool.poetry.dev-dependencies]
 black = "22.8.0"

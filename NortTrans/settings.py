@@ -15,6 +15,9 @@ from pathlib import Path
 from django.conf.global_settings import AUTH_USER_MODEL
 from dotenv import load_dotenv, find_dotenv
 
+import warnings
+
+warnings.filterwarnings(action="ignore")
 load_dotenv(find_dotenv())  # loads the configs from .env
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
