@@ -1,8 +1,26 @@
 version: '3'
 
 services:
+  nginx:
+    image: north-trans-api-nginx:latest
+    ports:
+      - 80
+    build:
+      context: .
+      dockerfile: deploy/nginx/Dockerfile
+#    environment:
+#      - VIRTUAL_HOST=app1
+#    networks:
+#      - default
+#      - web
+    volumes:
+      - static:/app/static
+    depends_on:
+      - app
+    restart: always
+
   app:
-    image: north-trans-api:latest
+    image: north-trans-python:latest
     build:
       context: .
       dockerfile: deploy/python/Dockerfile
@@ -12,6 +30,8 @@ services:
       - db
     environment:
       DB_HOST: db
+    volumes:
+      - static:/app/static
 
 
 
@@ -28,3 +48,4 @@ services:
 
 volumes:
   db:
+  static:
