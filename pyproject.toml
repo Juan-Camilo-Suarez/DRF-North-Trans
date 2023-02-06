@@ -11,6 +11,7 @@ djangorestframework = "3.14.0"
 python-dotenv = "0.21.0"
 psycopg2 = "2.9.5"
 pillow = "^9.3.0"
+factory-boy = "^3.2.1"
 
 [tool.poetry.dev-dependencies]
 black = "22.8.0"
