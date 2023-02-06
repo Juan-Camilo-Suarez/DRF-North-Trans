@@ -1,6 +1,6 @@
 import factory
 
-from api.models import ApplicationRegister
+from api.models import ApplicationRegister, User
 
 
 class RegisterFactory(factory.Factory):
@@ -12,3 +12,14 @@ class RegisterFactory(factory.Factory):
     email = factory.Faker("email")
     phone = factory.Faker("phone_number")
     user_position = "client"
+
+
+class UserFactory(factory.Factory):
+    class Meta:
+        model = User
+
+    email = factory.Faker("email")
+    name = factory.Faker("name")
+    password = factory.Faker("password")
+    # regula quien puede ir al admin
+    role = "client"
