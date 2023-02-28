@@ -1,11 +1,19 @@
 # DRF-North-Trans
 
+
+https://user-images.githubusercontent.com/71409094/221936750-1e230874-1ff3-4e54-8029-62854f497e3f.mp4
+
+
+
+
 ## 1. Introduction
 ### 1.1 Description
 ### 1.2 Main features
 ### 1.3 Limitations & Unknowns
 ## 2. Architecture 
 ### 2.1 Data Base Structure
+![image](https://user-images.githubusercontent.com/71409094/221935976-6f46c200-48bc-480b-8430-4f6e7154945c.png)
+
 ### 2.2 System Context Diagram
 ### 2.3 Deploy diagram
 
