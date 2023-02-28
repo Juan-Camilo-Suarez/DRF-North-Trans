@@ -1,9 +1,7 @@
-# DRF-North-Trans
+# DRF-North-Trans [code on gitlab](https://gitlab.com/juancamilosuarez3/DRF-North-Trans)
 
 
 https://user-images.githubusercontent.com/71409094/221936750-1e230874-1ff3-4e54-8029-62854f497e3f.mp4
-
-
 
 
 ## 1. Introduction
