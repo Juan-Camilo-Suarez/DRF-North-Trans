@@ -6,6 +6,13 @@ https://user-images.githubusercontent.com/71409094/221936750-1e230874-1ff3-4e54-
 
 ## 1. Introduction
 ### 1.1 Description
+The project is a logistics platform that uses Django Rest Framework, Docker, nginx, and Rest API. The platform uses an authentication and authorization system to allow users to log in based on their roles as admin, driver, and customer. Employees who have access to the platform can manage the registration process that requires users to go through an identity verification process via a personal phone call.
+
+The platform allows users to upload requests for cargo transport and view a list of all cargo transport requests, including their own. Employees of the platform have the ability to accept or reject cargo transport requests. The platform stores all user data, including their cargo transport requests.
+
+In addition, the platform features the functionality to view the photograph of the transport invoice and any damage photos after the transport has been completed. Users can view these photos once the transport has been completed. The driver who carries out the transport is responsible for taking the corresponding photos.
+
+The platform uses Django Rest Framework to create a REST API that runs in a Docker container. The platform uses nginx as a web server.
 ### 1.2 Main features
 ### 1.3 Limitations & Unknowns
 ## 2. Architecture 
