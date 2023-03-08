@@ -14,6 +14,25 @@ In addition, the platform features the functionality to view the photograph of t
 
 The platform uses Django Rest Framework to create a REST API that runs in a Docker container. The platform uses nginx as a web server.
 ### 1.2 Main features
+
+* User authentication and registration.
+
+* Registration with identity verification through a personal phone call, for which an application form is necessary.
+
+* Search and filtering: users can search for clothing items by keyword.
+
+* Users can view their purchase history. 
+
+* Freight Forwarding Requests Database: Users can upload a freight forwarding request to the platform and view a list of all freight forwarding requests.
+
+* Storage of users and of all cargo transport requests.
+* Functionality to view the photograph of the transport invoice (and the photo of any damage) after the transport is complete.
+
+* Swagger API.
+
+* Docker and Nginx.
+
+* Configuration to deploy on a private serve.
 ### 1.3 Limitations & Unknowns
 ## 2. Architecture 
 ### 2.1 Data Base Structure
