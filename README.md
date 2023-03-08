@@ -40,9 +40,6 @@ The platform uses Django Rest Framework to create a REST API that runs in a Dock
 ### 2.1 Data Base Structure
 ![image](https://user-images.githubusercontent.com/71409094/221935976-6f46c200-48bc-480b-8430-4f6e7154945c.png)
 
-### 2.2 System Context Diagram
-### 2.3 Deploy diagram
-
 
 ## Installing and running the project
 1. Create a virtual environment:\
