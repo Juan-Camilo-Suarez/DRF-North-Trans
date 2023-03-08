@@ -34,6 +34,8 @@ The platform uses Django Rest Framework to create a REST API that runs in a Dock
 
 * Configuration to deploy on a private serve.
 ### 1.3 Limitations & Unknowns
+* Swagger
+* Token usage
 ## 2. Architecture 
 ### 2.1 Data Base Structure
 ![image](https://user-images.githubusercontent.com/71409094/221935976-6f46c200-48bc-480b-8430-4f6e7154945c.png)
